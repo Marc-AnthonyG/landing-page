@@ -1,11 +1,42 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import cvImage from "../assets/cv_english_2024.png";
+import bloggingCover from "../assets/blogging.jpeg";
+import aboutMeCover from "../assets/about_me.png";
 ---
 
 <Layout title="Marc-Anthony Girard">
-  <main>
-    <h1 class="">Welcome to Marc-Anthony's website!</h1>
+  <main class="h-screen">
+    <div class="absolute w-screen z-10 top-2 flex justify-center">
+      <h1 class="text-2xl text-center p-4 bg-blue-500 rounded-lg bg-opacity-80">
+        Welcome to Marc-Anthony's website!
+      </h1>
+    </div>
+    <div class="flex flex-row h-screen overflow-hidden">
+      <Card
+        title="About me"
+        alt="About me link"
+        image={aboutMeCover}
+        description="Learn more about me and see my frontend skill!"
+        link="/about"
+      />
+      <div class="flex flex-col flex-1">
+        <Card
+          title="My CV"
+          alt="CV link"
+          image={cvImage}
+          description="Need a quick peak of my cv? Click here!"
+          link="/cv"
+        />
+        <Card
+          title="Blog"
+          alt="Blog link"
+          image={bloggingCover}
+          description="Check out my blog where I post about photography, technologies and more!"
+          link="/blog"
+        />
+      </div>
+    </div>
   </main>
 </Layout>
-
